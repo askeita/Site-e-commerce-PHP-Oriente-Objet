@@ -376,16 +376,16 @@
 
 
 
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery.superfish.js"></script>
-    <script type="text/javascript" src="js/jquery.bxslider.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
-    <script type="text/javascript" src="js/jquery.isotope.min.js"></script>
-    <script type="text/javascript" src="js/jquery.imagesloaded.min.js"></script>
+    <script type="text/javascript" src="<?php echo HOST.FOLDER ?>js/jquery.min.js"></script>
+    <script type="text/javascript" src="<?php echo HOST.FOLDER ?>js/jquery.superfish.js"></script>
+    <script type="text/javascript" src="<?php echo HOST.FOLDER ?>js/jquery.bxslider.js"></script>
+    <script type="text/javascript" src="<?php echo HOST.FOLDER ?>js/bootstrap.js"></script>
+    <script type="text/javascript" src="<?php echo HOST.FOLDER ?>js/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="<?php echo HOST.FOLDER ?>js/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="<?php echo HOST.FOLDER ?>js/jquery.imagesloaded.min.js"></script>
     <!-- jQuery KenBurn Slider  -->
-    <script type="text/javascript" src="js/jquery.themepunch.revolution.min.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="<?php echo HOST.FOLDER ?>js/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="<?php echo HOST.FOLDER ?>js/script.js"></script>
 
 
     <!--

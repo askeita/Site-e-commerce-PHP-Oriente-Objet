@@ -56,12 +56,12 @@ class UsersModel extends Model { // CreateReadUpdateDelete
 			return 0; 
 		}
 		
-		$idFavorite = $this -> insert(array("clients_idclients" => $userId, "items_iditems" => $itemId), "clients_has_items");
+		$idFavorite = $this->insert(array("clients_idclients" => $userId, "items_iditems" => $itemId), "clients_has_items");
 	}
 
 //
 	public function listenerClientsByEmail($email){
-		$user = $this -> select("*", "clients", array("email" => $email));
+		$user = $this->select("*", "clients", array("email" => $email));
 		return $user;
 		}
 	
@@ -72,7 +72,7 @@ class UsersModel extends Model { // CreateReadUpdateDelete
 			return 0; 
 		}
 
-		$myFavorite = $this -> select("*", "listenerFavorite", array("idclients" => $id));
+		$myFavorite = $this->select("*", "listenerFavorite", array("idclients" => $id));
 		var_dump($myFavorite);
 	}
 
@@ -91,7 +91,7 @@ class UsersModel extends Model { // CreateReadUpdateDelete
 			return 0;
 		}
 		$delivery["clients_idclients"] = $userId;
-		$idDelivery = $this -> insert($delivery, "delivery");
+		$idDelivery = $this->insert($delivery, "delivery");
 
 		// $idAddress = $this -> insert(array("street" => $street, "city"=>$city, "country"=>$country));
 		// var_dump($idAddress);	
@@ -103,9 +103,9 @@ class UsersModel extends Model { // CreateReadUpdateDelete
 				return 0; 
 			}
 			if($type == null) 
-				$myDelivery = $this -> select("*", "delivery", array("clients_idclients" => $userId));
+				$myDelivery = $this->select("*", "delivery", array("clients_idclients" => $userId));
 			else 
-				$myDelivery = $this -> select("*", "delivery", array("clients_idclients" => $userId, "type"=>$type));			
+				$myDelivery = $this->select("*", "delivery", array("clients_idclients" => $userId, "type"=>$type));			
 			var_dump($myDelivery);
 	}
 
@@ -120,7 +120,7 @@ class UsersModel extends Model { // CreateReadUpdateDelete
 		// if(!isset($order['num_order'])) {
 		// 	return 0;
 		// }
-		$order = array('num_order' => $this -> randomByAlphNum());
+		$order = array('num_order' => $this->randomByAlphNum());
 		$order["clients_idclients"] = $userId;
 		$order["delivery_iddelivery"] = $deliveryId;
 		$idorder = $this -> insert($order, "orders");
@@ -134,9 +134,9 @@ class UsersModel extends Model { // CreateReadUpdateDelete
 			return 0;
 		}
 		if($dateOrder == null)
-			$myOrders = $this -> select("*", "orders", array("clients_idclients" => $userId));
+			$myOrders = $this->select("*", "orders", array("clients_idclients" => $userId));
 		else 
-			$myOrders = $this -> select("*", "orders", array("clients_idclients" => $userId, "date_order" => $dateOrder));
+			$myOrders = $this->select("*", "orders", array("clients_idclients" => $userId, "date_order"=>$dateOrder));
 		
 		var_dump($myOrders);
 	}

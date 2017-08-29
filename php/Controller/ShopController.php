@@ -18,12 +18,18 @@ class ShopController extends Controller {
             header("Location: ".HOST.FOLDER."404");
         else {
 //            $itemsHome = $dbItem->listenerItems();
-			$itemsHome = $this->itemsModel->listenerItem($id);		
+			$itemsHome = $this->itemsModel->listenerItems();		
 			require("shop-single.php");
 //            echo "<script>let idItem= " . $itemsHome[0]["iditems"] . ";let typePage = 1;</script>";
-			echo "<script>let idItem= " . $itemHome[0]["iditems"] . ";let typePage = 1;</script>";
+			echo "<script>let idItem= " . $itemHome[0]["iditems"] . ";let typePage = 1;</script>";	// typePage permet de prendre en compte le nbre de requêtes Ajax
         }
     }
+	
+	public function shopListView() {
+		$itemsHome = $this->itemsModel->listenerItems();	// accès à la liste des 8 items
+		require("shop-list.php");
+		echo "<script>let typePage = 2;</script>";
+	}
 }
 
 ?>

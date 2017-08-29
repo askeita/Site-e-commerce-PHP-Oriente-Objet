@@ -168,41 +168,39 @@
                 <!-- Navigation -->
                 <nav id="nav">
                     <ul id="navlist" class="sf-menu clearfix">
-                        <li class="current"><a href="index.html">Home</a>
-                            <ul class="sub-menu">
-                                <li><a href="home-boxed.html"><span>--</span>Home Boxed</a></li>
-                                <li><a href="home-transparent.html"><span>--</span>Home Transparent</a></li>
-                                <li><a href="home-leftmenu.html"><span>--</span>Home Left Menu</a></li>
-                                <li><a href="home-bannerboxed.html"><span>--</span>Home Banner</a></li>
-                                <li><a href="home-banner.html"><span>--</span>Home Banner Fullwidth</a></li>
-                            </ul>
+                        <li class="current"><a href="<?php echo HOST.FOLDER ?>">Home</a>
                         </li>
                         <li><a href="#">Shop</a>
                             <ul class="sub-menu">
                                 <li><a href="shop-single.html"><span>--</span>Single Product</a></li>
+								<li><a href="<?php echo HOST.FOLDER."shop-list" ?>"><span>--</span>
                                 <li><a href="shop-list.html"><span>--</span>Products List</a></li>
                                 <li><a href="shop-grid.html"><span>--</span>Products Grid</a></li>
                                 <li><a href="cart.html"><span>--</span>Shopping Cart</a></li>
                                 <li><a href="checkout.html"><span>--</span>Checkout</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Women</a></li>
+<!--                         <li><a href="#">Women</a></li>
                         <li><a href="#">Men</a></li>
-                        <li><a href="#">Accesories</a></li>
-                        <li><a href="#">Pages</a>
+                        <li><a href="#">Accesories</a></li> -->
+                        <li><a href="#">Catégorie</a>
                             <ul class="sub-menu">
-                                <li><a href="about.html"><span>--</span>About</a></li>
+<!--                                 <li><a href="about.html"><span>--</span>About</a></li>
                                 <li><a href="shortcodes.html"><span>--</span>Shortcodes</a></li>
-                                <li><a href="typography.html"><span>--</span>Typography</a></li>
-                                <li><a href="404.php"><span>--</span>404</a></li>
+                                <li><a href="typography.html"><span>--</span>Typography</a></li> */
+                                <li><a href="404.php"><span>--</span>404</a></li> -->
+								<?php 
+									foreach($this->categories as $categorie)
+										echo "<li><a href='about.html'><span>--</span>".$categorie["name"]."</a></li>";
+								?>
                             </ul>
                         </li>
-                        <li><a href="#">Blog</a>
+<!--                        <li><a href="#">Blog</a>
                             <ul class="sub-menu">
                                 <li><a href="blog.html"><span>--</span>Blog</a></li>
                                 <li><a href="blog-single.html"><span>--</span>Blog Single</a></li>
                             </ul>
-                        </li>
+                        </li> -->
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>

@@ -11,6 +11,12 @@ class ItemsModel extends Model {
     function __construct() {
         parent::__construct();
     }
+	
+	/*
+	*	Add item to database
+	*	$item is array
+	*	return id last item
+	*/
 
 // Exercice 1 : Ecrire la fonction pour ajouter un item
     public function addItem($item = array()) {

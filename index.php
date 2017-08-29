@@ -46,15 +46,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST") { // on détermine la méthode. Si la m
         case FOLDER."user-register": // Chargement de la Class et lancement de la methode
             require "php/Controller/UsersController.php"; // charge le fichier PHP
             $usersController = new UsersController(); // on instancie le contrôleur
-            $usersController -> addUser(); // on détermine la fonction
+            $usersController->addUser(); // Lancemenent de la méthode; on détermine la fonction.
             break;
         
         case FOLDER."single": // Chargement de la Class et lancement de la methode
             require "php/Controller/ApiController.php"; // charge le fichier PHP
             $apiController = new ApiController(); // on instancie le contrôleur
-            $apiController -> detailItem((int) $id); // on détermine la fonction. on caste $id. 
+            $apiController->detailItem((int) $id); // on détermine la fonction. on caste $id. 
             break;
 
+        case FOLDER."shop-list": // Chargement de la Class et lancement de la methode
+            require "php/Controller/ApiController.php"; // charge le fichier PHP
+            $apiController = new ApiController(); // on instancie le contrôleur
+            $apiController->searchItems(); // on détermine la fonction. on caste $id. 
+            break;
+			
             default: // redirection vers la route 404
             header("Location: ".HOST.FOLDER."404");
     }
@@ -84,29 +90,37 @@ if($_SERVER["REQUEST_METHOD"] == "POST") { // on détermine la méthode. Si la m
         case FOLDER:
             require "php/Controller/HomeController.php";
             $home = new HomeController();
-            $home -> home();
+            $home->home();
 //            include("home.php");
             break;
 
         case FOLDER."logout":
             require "php/Controller/UsersController.php";
             $usersController = new UsersController();
-            $usersController -> logClientOut();
+            $usersController->logClientOut();
             break;
 
         case FOLDER."single": 
             require "php/Controller/ShopController.php";
             $shop = new ShopController();
-            $shop -> single((int) $id);
+            $shop->single((int)$id);
             break;
 
+		case FOLDER."shop-list": 
+            require "php/Controller/ShopController.php";
+            $shop = new ShopController();
+            $shop->shopListView(); // lancement de la méthode POO
+            break;
+			
 //        case "404":
         case FOLDER."404":
-            require("404.php");
-            break;
+            require("php/Controller/Controller.php");
+//			$controller = new Controller(); // Création d'une instance 
+           Controller::show_404();
+		   break;
 
         default:
-            header("Location: ".HOST.FOLDER."404");
+            header("Location: ".HOST.FOLDER."404"); // lancement de la page 404
     }
 }
 

@@ -19,8 +19,24 @@ class ApiController extends Controller {
         $reviewsItem =  $this->itemsModel->listenerReviewsItem($id);
 		
 //        echo json_encode($pictureItem); // affiche tableau PHP en objet JavaScript
-        echo json_encode(array("pictures" => $picturesItem, "reviews" => $reviewsItem));
+        echo json_encode(array("pictures"=>$picturesItem, "reviews"=>$reviewsItem));
     }
+	
+	public function searchItems() {
+		$sql = "";
+		if(isset($_POST["price"])){ // $_POST["price"] = valeur1 and valeur2
+			$sql .= "BETWEEN ".$_POST["price"]." AND ";
+		}
+		if(isset($_POST["categorie"])){	// $_POST["categorie"] = valeur1 and valeur2
+			$sql .= " categories_idcategories = ".$_POST["categorie"]." AND ";
+		}
+		$sql = substr($sql, 0, -4);
+		
+		$items = $this->itemsModel->select("*", "items", $sql);
+		
+		echo json_encode($items);
+    }
+	
 }
 
 ?>

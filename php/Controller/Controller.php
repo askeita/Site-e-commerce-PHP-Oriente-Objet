@@ -4,8 +4,7 @@
 		protected $categories;
 		protected $itemsModel;
 			
-		public function __construct() {	/* permet de répérer les catégories dès le
-								démarrage de la session */
+		public function __construct() {	/* permet de répérer et charger les catégories dès le démarrage de la session */
 			require "php/Model/ItemsModel.php";
 			$this->itemsModel = new ItemsModel();
 			$this->categories = $this->itemsModel->listenerCategories();
@@ -62,6 +61,9 @@
 			return 1;
 		}
 		
+		public static function show_404() {
+			include("404.php");
+		}
 		
 	}
 
