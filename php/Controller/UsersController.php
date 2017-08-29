@@ -1,7 +1,8 @@
 <?php
-require "UsersModel.php";		 // charger le fichier PHP
+//require "UsersModel.php";		 // charger le fichier PHP
 // EXERCICE : Ecrire le controlleur correspondant au CRUD (model) - CORRECTION
-class UsersController { // CreateReadUpdateDelete
+require "Controller.php";
+class UsersController extends Controller {  // CreateReadUpdateDelete
     
     public function addUser() {
         require "php/Model/UsersModel.php";
@@ -37,57 +38,6 @@ class UsersController { // CreateReadUpdateDelete
             $this -> clientAddSession($_POST);  // lancement de la méthode pour ajouter
             header("Location: " . HOST . FOLDER);
         }
-    }
-
-    public function arrayIsEmpty($data = array(), $keyObligatory = array()) {   // $data = $_POST
-        if(!is_array($data)) 
-            return -1;
-        
-        $isOk = false;
-
-        foreach($data as $key => $val) {    // parcours du tableau entier des données du $_POST
-            foreach($keyObligatory as $valO)   // parcours de toutes les clés obligatoires
-                if($valO == $key)
-                    $isOk = true;
-            if(!$isOk || empty(trim($val)))
-                return -1;
-        }  
-
-/*        if(isset($_POST)) {
-            $reponse = array();
-            $isNull = false;	// Vérification de l'existence des variables 
-            $isOK = true;	// Vérification de l'état complet de notre API
-
-             if (!isset($_POST['firstname'])) {
-                $isNull = true;
-                array_push($reponse, 'Le prénom n\'est pas reconnu!');
-            }
-
-            if (!isset($_POST['lastname'])) {
-                $isNull = true;
-                array_push($reponse, 'Le nom n\'est pas reconnu!');
-            }
-
-            if (!isset($_POST['email'])) {
-                $isNull = true;
-                array_push($response, 'L\'email n\'est pas reconnu!');
-            }
-
-            if (!isset($_POST['phone'])) {
-                $isNull = true;
-                array_push($response, 'Le téléphone n\'est pas reconnu!');
-            }
-
-            if (!isset($_POST['civility'])) {
-                $isNull = true;
-                array_push($response, 'La civilité n\'est pas reconnu!');
-            }
-
-            if (!isset($_POST['avatar'])) {
-                $isNull = true;
-                array_push($response, 'La civilité n\'est pas reconnu!');
-            } */
-        return 1;    
     }
 
     public function clientAddSession($user = array()) {  // ajout d'une session

@@ -19,8 +19,8 @@ $(function() {
 		
 		/** Reviews **/
 		$("#elem-reviews").text(data.reviews.length + " Review(s)");
-		for (var i = 0; i < data.pictures.length; i++) {
-			$("#tabs-3").append("<p><strong>"+data.reviews[i].username+ "</strong></p><p>" + data.reviews[i].commentaire+ " </p><br />");
+		for (var i = 0; i < data.reviews.length; i++) {
+			$("#tabs-3").append("<p><strong>" + data.reviews[i].username + "</strong></p><p>" + data.reviews[i].commentaire + " </p><br />");
 		}
 		
 

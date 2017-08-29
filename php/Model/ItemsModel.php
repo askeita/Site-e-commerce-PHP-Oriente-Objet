@@ -191,6 +191,12 @@ class ItemsModel extends Model {
 		}
 		return $this -> select("*", "reviews", array("items_iditems" => $id));
 	}
+	
+	/* **************** CategorieModel ******************** */
+	public function listenerCategories() {
+		return $this->select("name", "categories");	// on demande tous les names de la table categorie 
+	}
+	
 }
 
 /*    $test = new ItemsModel();

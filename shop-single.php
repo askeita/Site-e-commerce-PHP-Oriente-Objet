@@ -186,13 +186,13 @@
                                 endforeach;
                             ?>
                         </ul>
-                    </div>
+
 				<div class="clearfix"></div>
 						<div class="arrows">
 							<a id="prev1" class="prev1" href="#"><i class="fa fa-angle-left"></i></a>
 							<a id="next1" class="next1" href="#"><i class="fa fa-angle-right"></i></a>
 						</div>
-				</div>
+					</div>
 					<!-- End List Carousel -->
 				</div>
 			</div>
