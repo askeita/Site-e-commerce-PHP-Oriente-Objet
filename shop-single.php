@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php require("header.php"); ?>
+<?php require("header.php") ?>
 		<!-- content -->
 		<div id="content">
 
@@ -48,40 +48,15 @@
 							<div class="single-price">
 							   <ul>
 									<!-- <li><span class="high-price">$1 899.00</span></li> -->
-									<li><span class="low-price"><?php echo $itemHome[0]["price"]; ?></span></li>
+									<li><span class="low-price"><?php echo $itemHome[0]["price"] ?></span></li>
 								</ul>
 						    </div>
 
 						    <div class="single-infos">
-						    	<p><span>Brand:</span><?php echo $itemHome[0]["categorie"]; ?></p>
-						    	<p><span>Product Code:</span><?php echo $itemHome[0]["code_item"]; ?></p>
-						    	<p><span>Availability:</span><?php echo ($itemHome[0]["availabity"] == 1) ? "En stock" : "En rupture de stock" ?></p>	
-						    </div>
-
-							<div class="single-inputs row">
-								<div class="col-md-6">
-									<select class="select">
-										<option value="Select Size">Select Size</option>
-										<option value="S">S</option>
-										<option value="M">M</option>
-										<option value="L">L</option>
-										<option value="XL">XL</option>
-										<option value="XXL">XXL</option>
-									</select>
-								</div>
-								<div class="col-md-6">
-									<select class="select">
-										<option value="Select Color">Select Color</option>
-										<option value="White">White</option>
-										<option value="Black">Black</option>
-										<option value="Red">Red</option>
-										<option value="Blue">Blue</option>
-										<option value="Green">Green</option>
-									</select>
-								</div>
-							</div>
-						    
-
+						    	<p><span>Brand:</span><?php echo $itemHome[0]["categories"] ?></p>
+						    	<p><span>Product Code:</span><?php echo $itemHome[0]["code_item"] ?></p>
+						    	<p><span>Availability:</span><?php echo $itemHome[0]["availabity"] ?></p>	
+						    </div>    
 								
 							<div class="prod-end">
 								<a href="#" class="medium-button button-red add-cart">Add to Cart</a>
@@ -95,7 +70,7 @@
 							</div>
 
 							<div class="single-descript">
-								<p>We possess within us two minds. So far I have written only of the conscious mind.. Our subconscious mind contains such power and complexity that it literally staggers the imagination. We know that this subconscious mind controls and orchestrates our bodily functions, from pumping blood to all parts of our body.</p>
+								<p><?php echo $itemHome[0]["description"] ?></p>
 							</div>
 
 							<div class="share">
@@ -155,7 +130,7 @@
                         <ul class="filter-container clearfix">
                             <?php 
                                 $i = 0;
-                                foreach($itemHome as $item): 
+                                foreach($itemsHome as $item): 
                             ?>
                             <li class="class<?php echo $i + 1 ?>">
                                 <div class="arrival-overlay">
@@ -171,18 +146,18 @@
                                 <div class="arr-content">
                                     <a href="<?php echo HOST.FOLDER."single/".$item["iditems"] ?>"> 
                                         <!-- <p>Brown Coat</p> -->
-                                        <p><?php echo $item["libelle"] ?>
+                                        <p><?php echo $item["libelle"] ?></p>
                                     </a>
                                     <ul>
                                         <!-- <li><span class="low-price">$899.00</span></li> -->
-                                        <li><span class="low-price"><?php echo $item["price"]?></span></li>
+                                        <li><span class="low-price"><?php echo $item["price"]?>€</span></li>
                                     </ul>
 
                                     <div class="stars"><img src="upload/stars.png" alt=""></div>
                                 </div>
                             </li>
                             <?php
-                                $i = ($i + 1)%4;
+                                $i = ($i+1)%4;
                                 endforeach;
                             ?>
                         </ul>
@@ -338,29 +313,4 @@
                 });
         </script>
 	
-	<script type="text/javascript" src="<?php echo HOST.FOLDER ?>js/jquery.superfish.js"></script>
-	<script type="text/javascript" src="<?php echo HOST.FOLDER ?>js/jquery.bxslider.js"></script>
-
-	<script type="text/javascript" src="<?php echo HOST.FOLDER ?>js/bootstrap.js"></script>
-	<script type="text/javascript" src="<?php echo HOST.FOLDER ?>js/retina-1.1.0.min.js"></script>
-	<script type="text/javascript" src="<?php echo HOST.FOLDER ?>js/jquery.nicescroll.min.js"></script>
-	<script type="text/javascript" src="<?php echo HOST.FOLDER ?>js/jquery.magnific-popup.min.js"></script>
-	<script type="text/javascript" src="<?php echo HOST.FOLDER ?>js/plugins-scroll.js"></script>
-  	<script type="text/javascript" src="<?php echo HOST.FOLDER ?>js/jquery.isotope.min.js"></script>
-	<script type="text/javascript" src="<?php echo HOST.FOLDER ?>js/jquery.imagesloaded.min.js"></script>
-	<script type="text/javascript" src="<?php echo HOST.FOLDER ?>js/jquery.appear.js"></script>
-	<script type="text/javascript" src="<?php echo HOST.FOLDER ?>js/jquery.countTo.js"></script>
-	<script src="<?php echo HOST.FOLDER ?>js/jquery.parallax.js"></script>
-     <!-- jQuery KenBurn Slider  -->
-    <script type="text/javascript" src="<?php echo HOST.FOLDER ?>js/jquery.themepunch.revolution.min.js"></script>
-	<script type="text/javascript" src="<?php echo HOST.FOLDER ?>js/script.js"></script>
-
- 	<!-- include jQuery + carouFredSel plugin -->
-    <script type="text/javascript" src="<?php echo HOST.FOLDER ?>js/jquery.carouFredSel.js"></script>
-
-    <!-- optionally include helper plugins -->
-    <script type="text/javascript" src="<?php echo HOST.FOLDER ?>js/jquery.mousewheel.min.js"></script>
-    <script type="text/javascript" src="<?php echo HOST.FOLDER ?>js/jquery.touchSwipe.min.js"></script>
-	<script src="<?php echo HOST.FOLDER ?>js/myScripts.js"></script>
-</body>
-</html>
+<?php require("footer.php"); ?>

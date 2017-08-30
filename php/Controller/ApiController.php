@@ -24,24 +24,27 @@ class ApiController extends Controller {
 	
 	public function searchItems() {
 		$sql = "";
-		$search = false;
+		$isNotSearch = false;
 		
 		if(isset($_POST["price"])){ // $_POST["price"] = valeur1 and valeur2
-			$sql .= "BETWEEN ".$_POST["price"]." AND ";
-			$search = true;
+			$sql .= " price BETWEEN ".$_POST["price"]." AND ";
+			$isNotSearch = true;
 		}
 		if(isset($_POST["categorie"])){	// $_POST["categorie"] = valeur1 and valeur2
 			$sql .= " categories_idcategories = ".$_POST["categorie"]." AND ";
+			$isNotSearch = true;
 		}
 		
-		$sql = substr($sql, 0, -4);
+//		$sql = substr($sql, 0, -4);
 //		die($sql);
 		
-		if($search == false) // si aucun filtre n'est demandé
+//		if($search == false) // si aucun filtre n'est demandé
+		if($isNotSearch)
 			$sql = 1;
+		else
+			$sql .= " iditems=items_iditems GROUP BY iditems ";
 		
-		$items = $this->itemsModel->select("*", "items", $sql);
-		
+		$items = $this->itemsModel->select("i.*, p.url", "items i, pictures p", $sql);
 		echo json_encode($items);
     }
 	

@@ -200,7 +200,7 @@ class ItemsModel extends Model {
 	
 	/* **************** CategorieModel ******************** */
 	public function listenerCategories() {
-		return $this->select("name", "categories");	// on demande tous les names de la table categorie 
+		return $this->select("idcategories, name", "categories");	// on demande tous les names de la table categorie 
 	}
 	
 }

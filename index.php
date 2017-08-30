@@ -52,7 +52,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") { // on détermine la méthode. Si la m
         case FOLDER."single": // Chargement de la Class et lancement de la methode
             require "php/Controller/ApiController.php"; // charge le fichier PHP
             $apiController = new ApiController(); // on instancie le contrôleur
-            $apiController->detailItem((int) $id); // on détermine la fonction. on caste $id. 
+            $apiController->detailItem((int)$id); // on détermine la fonction. on caste $id. 
             break;
 
         case FOLDER."shop-list": // Chargement de la Class et lancement de la methode

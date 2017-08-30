@@ -11,7 +11,7 @@ class ShopController extends Controller {
 //        require "php/Model/ItemsModel.php";		 // charger le fichier PHP
 //        $dbItem = new ItemsModel();
 //        $itemHome = $dbItem -> listenerItem($id);
-        $itemsHome = $this->itemsModel->listenerItem($id);		
+        $itemHome = $this->itemsModel->listenerItem($id);		
 
 //        if(sizeof($itemsHome) != 1)
         if(sizeof($itemHome) != 1)			

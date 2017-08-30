@@ -8,7 +8,7 @@ class UsersController extends Controller {  // CreateReadUpdateDelete
         require "php/Model/UsersModel.php";
         $redirect = 0;  // définition de la variable de redirection
 //        echo $this -> arrayIsEmpty(array("firstname" => " ", "lastname" => " ", "email" => " ", "password" => " "));
-        $error = $this -> arrayIsEmpty($_POST, array("firstname", "lastname", "email", "password")); /* script de vérification 
+        $error = $this->arrayIsEmpty($_POST, array("firstname", "lastname", "email", "password")); /* script de vérification 
                                des champs obligatoires du formulaire */
 //        var_dump($_POST);
         if($error == -1) 
@@ -26,7 +26,7 @@ class UsersController extends Controller {  // CreateReadUpdateDelete
 
             if($redirect != -1) {
                 $user['password'] = password_hash($user['password'], PASSWORD_DEFAULT); // cryptage du mdp.
-                $idUser = $dbUser -> addUser($_POST);
+                $idUser = $dbUser->addUser($_POST);
 //                echo $Iduser;
             }
         endif;
@@ -35,7 +35,7 @@ class UsersController extends Controller {  // CreateReadUpdateDelete
             header("Location: " . HOST . FOLDER . "404");
         else {
             $_POST["idclients"] = $idUser;  // ajout d'un id dans notre array
-            $this -> clientAddSession($_POST);  // lancement de la méthode pour ajouter
+            $this->clientAddSession($_POST);  // lancement de la méthode pour ajouter
             header("Location: " . HOST . FOLDER);
         }
     }
