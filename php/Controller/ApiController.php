@@ -24,13 +24,21 @@ class ApiController extends Controller {
 	
 	public function searchItems() {
 		$sql = "";
+		$search = false;
+		
 		if(isset($_POST["price"])){ // $_POST["price"] = valeur1 and valeur2
 			$sql .= "BETWEEN ".$_POST["price"]." AND ";
+			$search = true;
 		}
 		if(isset($_POST["categorie"])){	// $_POST["categorie"] = valeur1 and valeur2
 			$sql .= " categories_idcategories = ".$_POST["categorie"]." AND ";
 		}
+		
 		$sql = substr($sql, 0, -4);
+//		die($sql);
+		
+		if($search == false) // si aucun filtre n'est demandé
+			$sql = 1;
 		
 		$items = $this->itemsModel->select("*", "items", $sql);
 		
