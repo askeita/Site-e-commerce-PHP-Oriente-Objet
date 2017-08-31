@@ -10,12 +10,10 @@
 								<h1 class="asidetitle">Categories</h1>
 
 								<ul>
-                                    <li><a href="#">Women	<span>(25)</span></a></li>
-                                    <li><a href="#">Men	<span>(235)</span></a></li>
-                                    <li><a href="#">Bags	<span>(89)</span></a></li>
-                                    <li><a href="#">Shoes	<span>(109)</span></a></li>
-                                    <li><a href="#">Jeans	<span>(129)</span></a></li>
-									<li><a href="#">Accessories	<span>(123)</span></a></li>
+									<?php
+                                        foreach($this->categories as $categorie)
+                                            echo "<li class='shop-categories-item' id='categorie-".$categorie["idcategories"]."'>".$categorie["name"]."</li>";
+                                    ?>
 								</ul>
 							</div>
 
@@ -176,7 +174,7 @@
 									</div>
 					        	</div>
 								<?php 
-									echo '<script>$("a#items-'.$item["iditems"].'.medium-button.button-red.add-cart").data("test", '.json_encode($item).');</script>';
+									echo '<script>$("a#items-'.$item["iditems"].'.medium-button.button-red.add-cart").data("item",'.json_encode($item).');</script>';
 									endforeach;
 								?>
 						</div>
@@ -259,5 +257,9 @@
 	      " - $" + $( "#slider-range" ).slider( "values", 1 ) );
 	  });
 	</script>
+	
+    <script type="text/javascript" src="<?php echo HOST.FOLDER ?>js/jquery.themepunch.revolution.min.js"></script>
+	<script type="text/javascript" src="<?php echo HOST.FOLDER ?>js/script.js"></script>
+	<script src="<?php echo HOST.FOLDER ?>js/myScripts.js"></script>
 	
 <?php require("footer.php"); ?>

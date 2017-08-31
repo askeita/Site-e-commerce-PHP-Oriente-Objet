@@ -311,6 +311,11 @@
                 $(window).load( function() {
                     $('.sp-wrap').smoothproducts();
                 });
-        </script>
+    </script>
+	
+	<script type="text/javascript" src="<?php echo HOST.FOLDER ?>js/jquery.themepunch.revolution.min.js"></script>
+	<script type="text/javascript" src="<?php echo HOST.FOLDER ?>js/script.js"></script>
+	<script src="<?php echo HOST.FOLDER ?>js/myScripts.js"></script>
+	
 	
 <?php require("footer.php"); ?>

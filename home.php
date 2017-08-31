@@ -406,6 +406,8 @@
             });
             // END OF THE SECTION, HIDE MY ARROWS SEPERATLY FROM THE BULLETS
         });
+		$ = tpj;
+		let typePage = 0;
     </script>
 
 <?php require ("footer.php"); ?>

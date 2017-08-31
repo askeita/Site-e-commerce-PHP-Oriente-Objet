@@ -48,7 +48,7 @@
                         </ul>
                         <div class="mobile-version">
                             <div class="cart-icon">
-                                <a href="#"><img src="<?php echo HOST.FOLDER ?>images/cart-white.png" alt="">
+                                <a href="#"><img src="images/cart-white.png" alt="">
                                     <span>8 Items</span></a>
                             </div>
                         </div>                    
@@ -105,7 +105,7 @@
                     </div>
 
                     <div class="logo">
-                        <a href="index.html"><img src="<?php echo HOST.FOLDER ?>images/logo.png" alt=""></a>
+                        <a href="index.php"><img src="<?php echo HOST.FOLDER ?>images/logo.png" alt=""></a>
                     </div>
 
                     <div class="cart">
@@ -115,21 +115,6 @@
                             <div class="shop-items">10</div>
                         </div>
                         <div class="hover-cart">
-
-                            <div class="hover-box">
-
-                                <a href="#"><img src="<?php echo HOST.FOLDER ?>images/hover1.png" alt="" class="left-hover"></a>
-                                <div class="hover-details">
-                                    <p>Grey California Dress</p>
-                                    <span>$ 3 199.00</span>
-                                    <div class="quantity">Quantity: 1</div>
-                                </div>
-
-                                <a href="#" class="right-hover"><img src="<?php echo HOST.FOLDER ?>images/delete.png" alt=""></a>
-
-                                <div class="clear"></div>
-
-                            </div>
 
                             <div class="hover-box bd0">
 
@@ -147,7 +132,7 @@
                             </div>
 
                             <div class="subtotal">
-                                Cart Subtotal: <span>$ 4 372</span>
+                                Cart Subtotal: <span>$ 0</span>
                             </div>
 
                             <button class="viewcard"> View Cart</button>
@@ -180,15 +165,8 @@
                                 <li><a href="checkout.html"><span>--</span>Checkout</a></li>
                             </ul>
                         </li>
-<!--                         <li><a href="#">Women</a></li>
-                        <li><a href="#">Men</a></li>
-                        <li><a href="#">Accesories</a></li> -->
                         <li><a href="#">Catégorie</a>
                             <ul class="sub-menu">
-<!--                                 <li><a href="about.html"><span>--</span>About</a></li>
-                                <li><a href="shortcodes.html"><span>--</span>Shortcodes</a></li>
-                                <li><a href="typography.html"><span>--</span>Typography</a></li> */
-                                <li><a href="404.php"><span>--</span>404</a></li> -->
 								<?php 
 									foreach($this->categories as $categorie)
 										echo "<li><a href='about.html'><span>--</span>".$categorie["name"]."</a></li>";

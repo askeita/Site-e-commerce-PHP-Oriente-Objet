@@ -96,8 +96,8 @@
 
 		</div>
 
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/jquery-ui.js"></script>
+	<script type="text/javascript" src="<?php echo HOST.FOLDER ?>js/jquery.min.js"></script>
+	<script type="text/javascript" src="<?php echo HOST.FOLDER ?>js/jquery-ui.js"></script>
 
 	<script type="text/javascript" src="<?php echo HOST.FOLDER ?>js/jquery.superfish.js"></script>
 	<script type="text/javascript" src="<?php echo HOST.FOLDER ?>js/jquery.bxslider.js"></script>
